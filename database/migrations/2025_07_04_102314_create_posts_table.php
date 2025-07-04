@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('images')->nullable(); // Optional image field
+            $table->string('image')->nullable(); // Optional image field
             $table->string('title');
             $table->string('slug')->unique();
             $table->longText('content');
