@@ -14,9 +14,9 @@ class PostController extends Controller
     public function index()
     {
         $categories = Category::get();
-        $posts = Post::latest()->get(); // Fetching posts, ordered by latest first
+        $posts = Post::latest()->simplePaginate(5); // Fetching posts, ordered by latest first
 
-        // dump($categories); // Debugging line to check
+        //dd($posts); // Debugging line to check
 
         return view('dashboard', [
             'categories'=> $categories,
